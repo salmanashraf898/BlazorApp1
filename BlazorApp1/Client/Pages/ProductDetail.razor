@@ -1,0 +1,45 @@
+﻿@page "/Productdetail"
+@using BlazorApp1.Shared
+@inject HttpClient Http
+
+<PageTitle>Product Detail</PageTitle>
+
+<h1>Product Detail</h1>
+
+
+
+   <p>Click to Get Detail</p> 
+
+<button @onclick="GetProductdetail">Get Detail</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product Detail</th>
+                <th>Prize</th>
+                <th>Desription</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var pd in productdetails)
+            {
+                <tr>
+                    <td>@pd. Id</td>
+                    <td>@pd.ProductName </td>
+                    <td>@pd.Prize</td>
+                    <td>@pd.Describtion</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+@code {
+    productdetail[]? productdetails;
+    async void GetProductdetail()
+    {
+        productdetails=await Http.GetFromJsonAsync<productdetail[]>("/Home");
+    }
+
+
+}

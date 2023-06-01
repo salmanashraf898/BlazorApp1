@@ -1,0 +1,69 @@
+﻿@page "/cart"
+@using BlazorApp1.Shared
+@inject HttpClient Http
+
+<PageTitle>Cart</PageTitle>
+
+<h3>Cart</h3>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="new.css">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Shopping Cart</h1>
+  </header>
+
+  <main>
+    <div class="cart">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product 1</td>
+            <td>$10</td>
+            <td>2</td>
+            <td>$20</td>
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+          <tr>
+            <td>Product 2</td>
+            <td>$15</td>
+            <td>1</td>
+            <td>$15</td>
+            <td><button class="remove-btn">Remove</button></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total:</td>
+            <td>$35</td>
+            <td></td>
+          </tr>
+        </tfoot>
+      </table>
+      <a href="checkout.html" class="checkout-btn">Checkout</a>
+    </div>
+  </main>
+</body>
+</html>
+
+@code {
+
+}
+
+
+@code {
+  
+}
